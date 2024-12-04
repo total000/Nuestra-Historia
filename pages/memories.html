@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscar & Yuritzi | Recuerdos</title>
+    <link rel="stylesheet" href="../styles/memories.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <h1>O&Y</h1>
+            <ul class="nav-links">
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="memories.html" class="active">Recuerdos</a></li>
+                <li><a href="poems.html">Poemas</a></li>
+                <li><a href="diary.html">Diario</a></li>
+                <li><button id="logoutBtn">Salir</button></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h2>Nuestros Recuerdos</h2>
+            <p>Momentos especiales que compartimos juntos</p>
+        </section>
+
+        <section class="memories-section">
+            <div class="memory-form">
+                <h3>Agregar un Recuerdo</h3>
+                <form id="memoryForm">
+                    <input type="text" id="memoryTitle" placeholder="Título del recuerdo" required>
+                    <textarea id="memoryDescription" placeholder="Describe este momento especial..." required></textarea>
+                    
+                    <div class="file-upload-container">
+                        <div class="file-upload">
+                            <label for="mediaUpload" class="upload-label">
+                                <span class="upload-icon">📁</span>
+                                <span>Subir archivos</span>
+                            </label>
+                            <input type="file" id="mediaUpload" multiple accept="image/*,video/*,.pdf,.docx" class="file-input">
+                        </div>
+                        <div class="url-input">
+                            <input type="text" id="mediaUrl" placeholder="O pega una URL de imagen/video">
+                        </div>
+                    </div>
+                    
+                    <div id="uploadPreview" class="upload-preview"></div>
+                    <div id="uploadProgress" class="upload-progress"></div>
+                    
+                    <button type="submit">Guardar Recuerdo</button>
+                </form>
+            </div>
+            
+            <div class="view-controls">
+                <button id="gridView" class="view-button active">
+                    <span class="icon">⊞</span> Cuadrícula
+                </button>
+                <button id="listView" class="view-button">
+                    <span class="icon">≣</span> Lista
+                </button>
+            </div>
+
+            <div id="memoriesContainer" class="memories-grid"></div>
+        </section>
+    </main>
+
+    <div id="mediaModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <div class="modal-content">
+            <div id="modalMedia"></div>
+            <div id="modalInfo"></div>
+        </div>
+    </div>
+
+    <script type="module" src="../js/memories.js"></script>
+</body>
+</html>

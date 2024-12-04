@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscar & Yuritzi | Diario</title>
+    <link rel="stylesheet" href="../styles/diary.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <h1>O&Y</h1>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="memories.html">Recuerdos</a></li>
+                <li><a href="poems.html">Poemas</a></li>
+                <li><a href="diary.html" class="active">Diario</a></li>
+                <li><button id="logoutBtn">Salir</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h2>Nuestro Diario</h2>
+            <p>Cada día una nueva página de amor</p>
+        </section>
+
+        <section class="diary-section">
+            <div class="entry-form">
+                <h3>Nueva Entrada</h3>
+                <form id="diaryForm">
+                    <input type="text" id="entryTitle" placeholder="Título de la entrada" required>
+                    <textarea id="entryContent" placeholder="¿Qué quieres compartir hoy?" required></textarea>
+                    <button type="submit">Guardar Entrada</button>
+                </form>
+            </div>
+            <div id="entriesContainer" class="entries-container"></div>
+        </section>
+    </main>
+
+    <script type="module" src="../js/diary.js"></script>
+</body>
+</html>
